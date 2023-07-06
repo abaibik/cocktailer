@@ -1,26 +1,12 @@
-import "./App.css";
-import { Container } from "semantic-ui-react";
+import "./index.css";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { routesConfig } from "./routes/routesConfig";
 
 function App() {
-  return (
-    <div className="App">
-      <Container className="container-styles">
-        <nav></nav>
-        <header>
-          <h1>Coctailer</h1>
-          <p>Welcome to the site with cocktail recipes.</p>
-          <p>
-            Hier you can find some tasty recipe and improve your bartender
-            skills
-          </p>
-        </header>
+  const router = createBrowserRouter(routesConfig);
 
-        <main></main>
-
-        <footer></footer>
-      </Container>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
