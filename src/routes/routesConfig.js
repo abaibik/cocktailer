@@ -1,6 +1,7 @@
 import Root from "./root";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages//Home";
+import SearchCocktail from "../pages/SearchCocktail";
 
 export const routesConfig = [
   {
@@ -12,10 +13,10 @@ export const routesConfig = [
         path: "",
         element: <Home />,
       },
-      //   {
-      //     path: "details",
-      //     element: <Details />,
-      //   },
+      {
+        path: "cocktails",
+        element: <SearchCocktail />,
+      },
     ],
   },
 ];
