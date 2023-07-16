@@ -76,10 +76,14 @@ select {
 }
 
 * {
-  --main-pink: #F72585;
-  --main-purple: #7209B7;
+  --main-pink: #fa519de5;
+  --main-purple: rgb(114, 9, 183);
   --main-light-blue: #4361EE;
   --main-turquoise: #4CC9F0;
+  --border: 1.5em;
+  --blur: blur(9px);
+  --rect: inset(0);
+  --main-image-url: url(https://unsplash.com/photos/5_fLBRtcVOc);
 
   font-family: 'Noto Serif Makasar', serif;
   color: var(--main-turquoise);
@@ -94,41 +98,68 @@ select {
   font-size: 10rem !important;
 }
 
-#sidebar > div {
+.container-flex {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e3e3e3;
+  gap: 10rem;
 }
 
-#sidebar nav {
-  flex: 1;
-  overflow: auto;
-  padding-top: 1rem;
-}
-
-#sidebar nav a {
+.sidebar {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  white-space: pre;
-  padding: 0.5rem;
-  border-radius: 8px;
-  color: inherit;
-  text-decoration: none;
   gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 10rem;
+  padding: 5rem;
+  border-radius: 40px;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
 }
 
-#sidebar nav a:hover {
-  background: #e3e3e3;
+.nav-item {
+  padding: 20px;
+  text-decoration: none;
+  transition: .3s;
+  margin: 0 6px;
+  z-index: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  position: relative;
+  
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #dfe2ea;
+    border-radius: 8px 8px 0 0;
+    opacity: 0;
+    transition: .3s;
+  }
 }
 
-#sidebar nav a.active {
-  background: hsl(224, 66%, 74%);
-  color: white;
+.nav-item:not(.is-active):hover { color: var(--main-pink); }
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
 }
 
+@media (max-width: 580px) {
+  .nav { overflow: auto; }
+}
 
+.slide-show {
+  width: 80em;
+  height: 100em;
+}

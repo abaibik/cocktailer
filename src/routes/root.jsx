@@ -1,5 +1,5 @@
 import { Container } from "semantic-ui-react";
-
+import "../index.css";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 export default function Root() {
@@ -9,29 +9,30 @@ export default function Root() {
 
   return (
     <>
-      <div id="sidebar">
-        <div className="ui vertical menu">
-          <Container>
+      <Container>
+        <div className="container-flex">
+          <nav className="sidebar">
             <Link
-              className="active item"
+              className="active item nav-item"
               active={pathname === homePath}
               to={homePath}
             >
               Home
             </Link>
             <Link
-              className="active item"
+              className="active item nav-item"
               active={pathname === searchCocktailPath}
               to={searchCocktailPath}
             >
               Search cocktail
             </Link>
-          </Container>
+          </nav>
+
+          <div id="detail">
+            <Outlet />
+          </div>
         </div>
-      </div>
-      <div id="detail">
-        <Outlet />
-      </div>
+      </Container>
     </>
   );
 }
