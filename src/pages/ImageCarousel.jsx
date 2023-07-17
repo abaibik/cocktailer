@@ -33,7 +33,6 @@ export default function ImageCarousel() {
     <Swiper
       className="slide-show"
       direction={"vertical"}
-      slidesPerView={1}
       mousewheel={true}
       autoplay={{
         delay: 2500,
