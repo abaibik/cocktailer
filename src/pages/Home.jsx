@@ -5,9 +5,9 @@ import ImageCarousel from "./ImageCarousel";
 export default function Home() {
   return (
     <Container>
-      <h1>Coctailer</h1>
-      <div className="container-flex">
+      <div className="container-carousel-flex">
         <div>
+          <h1>Coctailer</h1>
           <p>Welcome to the site with cocktail recipes.</p>
           <p>
             Hier you can find some tasty recipe and improve your bartender
