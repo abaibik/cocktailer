@@ -9,14 +9,9 @@ import {
   Glasses,
 } from "../images/index";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCreative,
-  Mousewheel,
-  Autoplay,
-  Pagination,
-} from "swiper/modules";
+import { EffectFlip, Mousewheel, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-creative";
+import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 
 export default function ImageCarousel() {
@@ -39,20 +34,8 @@ export default function ImageCarousel() {
         disableOnInteraction: false,
       }}
       pagination={true}
-      modules={[Mousewheel, Autoplay, Pagination, EffectCreative]}
-      effect={"creative"}
-      creativeEffect={{
-        prev: {
-          shadow: true,
-          translate: ["-125%", 0, -800],
-          rotate: [0, 0, -90],
-        },
-        next: {
-          shadow: true,
-          translate: ["125%", 0, -800],
-          rotate: [0, 0, 90],
-        },
-      }}
+      modules={[Mousewheel, Autoplay, Pagination, EffectFlip]}
+      effect={"flip"}
     >
       {images.map((el, index) => {
         return (
