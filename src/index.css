@@ -137,7 +137,7 @@ select {
   gap: 10rem;
 }
 
-.slide-show {
+.swiper {
   width: 60em;
   height: 80em;
   border-radius: 1rem;

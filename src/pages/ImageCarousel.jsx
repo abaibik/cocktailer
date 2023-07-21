@@ -36,6 +36,7 @@ export default function ImageCarousel() {
       pagination={true}
       modules={[Mousewheel, Autoplay, Pagination, EffectFlip]}
       effect={"flip"}
+      autoHeight={true}
     >
       {images.map((el, index) => {
         return (
