@@ -92,12 +92,20 @@ select {
 }
 
 .container-styles {
-  padding: 5rem 2rem;
+  padding: 2rem;
 }
 
 * > h1 {
   font-family: "Bangers", cursive !important;
   font-size: 10rem !important;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    text-align: left;
+    font-size: 5rem !important;
+  }
 }
 
 .container-flex {
