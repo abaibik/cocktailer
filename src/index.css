@@ -92,7 +92,7 @@ select {
 }
 
 .container-styles {
-  padding: 2rem;
+  padding: 5rem 2rem;
 }
 
 * > h1 {
@@ -132,11 +132,6 @@ select {
   color: var(--main-pink);
   outline: 1px solid var(--main-pink);
   border-radius: 1.5rem;
-}
-
-.container-carousel-flex {
-  display: flex;
-  gap: 10rem;
 }
 
 .swiper {

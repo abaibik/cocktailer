@@ -3,7 +3,7 @@ import { Container, Form, Input } from "semantic-ui-react";
 
 export default function SearchCocktail() {
   return (
-    <Container>
+    <Container className="container-styles">
       <h1>Search cocktail</h1>
       <Form className="ui form padding-table">
         <div className="ui three column grid">

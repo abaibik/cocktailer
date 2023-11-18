@@ -8,7 +8,7 @@ export default function ErrorPage() {
   console.error(error.data);
 
   return (
-    <Container style={{ paddingTop: "5rem" }}>
+    <Container className="container-styles">
       <div className="ui stackable grid">
         <div className="two column row">
           <div className="center aligned column">
