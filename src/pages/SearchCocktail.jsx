@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
 import "../index.css";
 import { Container, Form, Input } from "semantic-ui-react";
+import ErrorPage from "./ErrorPage";
 
 export default function SearchCocktail() {
+  const [error, setError] = useState(false);
+
   return (
     <Container>
       <h1>Search cocktail</h1>
