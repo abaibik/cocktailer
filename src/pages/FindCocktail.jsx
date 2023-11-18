@@ -1,6 +1,4 @@
 import { Container } from "semantic-ui-react";
-import { useEffect, useState } from "react";
-import ErrorPage from "./ErrorPage";
 
 export default function FindCocktail() {
   return (
