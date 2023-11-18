@@ -1,4 +1,4 @@
- /* https://piccalil.li/blog/a-modern-css-reset */
+/* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
 *,
@@ -22,8 +22,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -62,9 +62,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -75,17 +75,19 @@ select {
   }
 }
 
+/* Custom styles */
+
 * {
   --main-pink: #fa519de5;
   --main-purple: rgb(114, 9, 183);
-  --main-light-blue: #4361EE;
-  --main-turquoise: #4CC9F0;
+  --main-light-blue: #4361ee;
+  --main-turquoise: #4cc9f0;
   --border: 1.5em;
   --blur: blur(9px);
   --rect: inset(0);
   --main-image-url: url(https://unsplash.com/photos/5_fLBRtcVOc);
 
-  font-family: 'Noto Serif Makasar', serif;
+  font-family: "Noto Serif Makasar", serif;
   color: var(--main-turquoise);
 }
 
@@ -94,7 +96,7 @@ select {
 }
 
 * > h1 {
-  font-family: 'Bangers', cursive !important;
+  font-family: "Bangers", cursive !important;
   font-size: 10rem !important;
 }
 
@@ -113,7 +115,7 @@ select {
   overflow: hidden;
   max-width: 100%;
   margin-top: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5rem;
   box-shadow: 0 1rem 40px #9fcddb;
 }
@@ -126,8 +128,8 @@ select {
   position: relative;
 }
 
-.nav-item:hover { 
-  color: var(--main-pink); 
+.nav-item:hover {
+  color: var(--main-pink);
   outline: 1px solid var(--main-pink);
   border-radius: 1.5rem;
 }
@@ -155,4 +157,3 @@ select {
   text-align: center;
   padding-top: 2rem;
 }
-
