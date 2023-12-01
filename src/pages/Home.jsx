@@ -1,25 +1,25 @@
 import "../index.css";
-import { Container } from "semantic-ui-react";
+import { Container, Grid, Header } from "semantic-ui-react";
 import ImageCarousel from "./ImageCarousel";
 
 export default function Home() {
   return (
     <Container className="container-styles">
-      <div className="ui stackable grid">
-        <div className="two column row">
-          <div className="center aligned column">
-            <h1>Coctailer</h1>
+      <Grid stackable>
+        <Grid.Row columns={2}>
+          <Grid.Column width={8} textAlign="left" padded>
+            <Header as="h1">Coctailer</Header>
             <p>Welcome to the site with cocktail recipes.</p>
             <p>
               Hier you can find some tasty recipe and improve your bartender
               skills
             </p>
-          </div>
-          <div className="column">
+          </Grid.Column>
+          <Grid.Column width={4} padded>
             <ImageCarousel />
-          </div>
-        </div>
-      </div>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </Container>
   );
 }
