@@ -85,10 +85,18 @@ select {
   --border: 1.5em;
   --blur: blur(9px);
   --rect: inset(0);
-  --main-image-url: url(https://unsplash.com/photos/5_fLBRtcVOc);
+}
 
+body {
+  font-size: 18px !important;
   font-family: "Noto Serif Makasar", serif;
-  color: var(--main-turquoise);
+  color: var(--main-turquoise) !important;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px !important;
+  }
 }
 
 .container-styles {
