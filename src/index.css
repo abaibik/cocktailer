@@ -112,7 +112,7 @@ select {
 .container-flex {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 2rem;
 }
 
 .sidebar {
