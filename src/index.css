@@ -1,4 +1,4 @@
- /* https://piccalil.li/blog/a-modern-css-reset */
+/* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
 *,
@@ -22,8 +22,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -62,9 +62,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -75,33 +75,52 @@ select {
   }
 }
 
+/* Custom styles */
+
 * {
   --main-pink: #fa519de5;
   --main-purple: rgb(114, 9, 183);
-  --main-light-blue: #4361EE;
-  --main-turquoise: #4CC9F0;
+  --main-light-blue: #4361ee;
+  --main-turquoise: #4cc9f0;
   --border: 1.5em;
   --blur: blur(9px);
   --rect: inset(0);
-  --main-image-url: url(https://unsplash.com/photos/5_fLBRtcVOc);
+}
 
-  font-family: 'Noto Serif Makasar', serif;
-  color: var(--main-turquoise);
+body {
+  font-size: 18px !important;
+  font-family: "Noto Serif Makasar", serif;
+  color: var(--main-turquoise) !important;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px !important;
+  }
 }
 
 .container-styles {
-  padding: 2rem;
+  padding: 0 2rem;
+  width: 100%;
 }
 
 * > h1 {
-  font-family: 'Bangers', cursive !important;
+  font-family: "Bangers", cursive !important;
   font-size: 10rem !important;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    text-align: left;
+    font-size: 5rem !important;
+  }
 }
 
 .container-flex {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 2rem;
 }
 
 .sidebar {
@@ -113,34 +132,23 @@ select {
   overflow: hidden;
   max-width: 100%;
   margin-top: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5rem;
-  box-shadow: 0 1rem 40px #9fcddb;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .nav-item {
   padding: 1rem;
   text-decoration: none;
-  margin: 0 1rem;
   z-index: 1;
   position: relative;
 }
 
-.nav-item:hover { 
-  color: var(--main-pink); 
+.nav-item:hover {
+  color: var(--main-pink);
   outline: 1px solid var(--main-pink);
   border-radius: 1.5rem;
-}
-
-.container-carousel-flex {
-  display: flex;
-  gap: 10rem;
-}
-
-.swiper {
-  width: 60em;
-  height: 80em;
-  border-radius: 1rem;
 }
 
 .padding-table {
@@ -156,3 +164,47 @@ select {
   padding-top: 2rem;
 }
 
+.back-button {
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  width: 8rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  z-index: 1;
+}
+
+.back-button:hover {
+  border-radius: 1.5rem;
+}
+
+.back-button:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px var(--main-light-blue),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.back-button:hover {
+  color: #fff;
+}
+.back-button:hover:after {
+  left: 0;
+  width: 100%;
+}
+.back-button:active {
+  top: 2px;
+}

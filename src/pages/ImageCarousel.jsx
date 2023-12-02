@@ -1,50 +1,62 @@
 import "../index.css";
-import {
-  CocktailsMain,
-  OldFashion,
-  Thyme,
-  Barkeeper,
-  Pineapple,
-  Lime,
-  Glasses,
-} from "../images/index";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFlip, Mousewheel, Autoplay, Pagination } from "swiper/modules";
+import { EffectCube, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-flip";
+import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 
 export default function ImageCarousel() {
-  const images = [
-    CocktailsMain,
-    OldFashion,
-    Thyme,
-    Barkeeper,
-    Pineapple,
-    Lime,
-    Glasses,
+  const SliderImages = [
+    {
+      title: "A carafe and glasses",
+      src: "./images/carafe.jpg",
+    },
+    {
+      title: "Old Fashion Cocktail",
+      src: "./images/oldFashion.jpg",
+    },
+    {
+      title: "Lime Cocktail",
+      src: "./images/lime-cocktail.jpg",
+    },
+
+    { title: "Thyme Cocktail", src: "./images/thyme.jpg" },
+    { title: "Blueberry Cocktail", src: "./images/blueberry.jpg" },
+    {
+      title: "Pineapple Cocktail",
+      src: "./images/pineapple.jpg",
+    },
+
+    { title: "Lime", src: "./images/lime.jpg" },
+    { title: "Cocktail Glasses", src: "./images/glasses.jpg" },
   ];
+
   return (
     <Swiper
-      className="slide-show"
-      direction={"vertical"}
-      mousewheel={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
       }}
       pagination={true}
-      modules={[Mousewheel, Autoplay, Pagination, EffectFlip]}
-      effect={"flip"}
-      autoHeight={true}
+      modules={[Autoplay, Pagination, EffectCube]}
+      effect={"cube"}
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      }}
     >
-      {images.map((el, index) => {
-        return (
-          <SwiperSlide>
-            <img alt={index} src={el}></img>
-          </SwiperSlide>
-        );
-      })}
+      {SliderImages.map(({ title, src }) => (
+        <SwiperSlide>
+          <img
+            key={title}
+            alt={title}
+            src={src}
+            style={{ height: "100%", aspectRatio: 1, objectFit: "cover" }}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }
