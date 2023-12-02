@@ -7,18 +7,27 @@ import "swiper/css/pagination";
 
 export default function ImageCarousel() {
   const SliderImages = [
-    { title: "Cocktails", src: "./images/cocktailsMain.jpg" },
+    {
+      title: "A carafe and glasses",
+      src: "./images/carafe.jpg",
+    },
     {
       title: "Old Fashion Cocktail",
       src: "./images/oldFashion.jpg",
     },
+    {
+      title: "Lime Cocktail",
+      src: "./images/lime-cocktail.jpg",
+    },
+
     { title: "Thyme Cocktail", src: "./images/thyme.jpg" },
-    { title: "Barkeeper", src: "./images/barkeeper.jpg" },
+    { title: "Blueberry Cocktail", src: "./images/blueberry.jpg" },
     {
       title: "Pineapple Cocktail",
       src: "./images/pineapple.jpg",
     },
-    { title: "Lime Cocktail", src: "./images/lime.jpg" },
+
+    { title: "Lime", src: "./images/lime.jpg" },
     { title: "Cocktail Glasses", src: "./images/glasses.jpg" },
   ];
 
@@ -40,7 +49,12 @@ export default function ImageCarousel() {
     >
       {SliderImages.map(({ title, src }) => (
         <SwiperSlide>
-          <img key={title} alt={title} src={src}></img>
+          <img
+            key={title}
+            alt={title}
+            src={src}
+            style={{ height: "100%", aspectRatio: 1, objectFit: "cover" }}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
