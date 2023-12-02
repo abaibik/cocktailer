@@ -155,3 +155,48 @@ select {
   text-align: center;
   padding-top: 2rem;
 }
+
+.back-button {
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  width: 8rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  z-index: 1;
+}
+
+.back-button:hover {
+  border-radius: 1.5rem;
+}
+
+.back-button:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px var(--main-light-blue),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.back-button:hover {
+  color: #fff;
+}
+.back-button:hover:after {
+  left: 0;
+  width: 100%;
+}
+.back-button:active {
+  top: 2px;
+}

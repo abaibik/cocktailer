@@ -1,18 +1,28 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, useNavigate } from "react-router-dom";
 import "../index.css";
 import { Player } from "@lottiefiles/react-lottie-player";
-import { Container } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error.data);
 
+  const navigate = useNavigate();
+  const goBackHandler = () => navigate(-1);
+
   return (
     <Container className="container-styles">
+      <button onClick={goBackHandler} className="back-button">
+        <IoArrowBackCircleSharp style={{ color: "black", fontSize: "2rem" }} />
+        <p>Back</p>
+      </button>
       <div className="ui stackable grid">
         <div className="two column row">
           <div className="center aligned column">
-            <h1>Oops!</h1>
+            <Header as="h1" textAlign="center">
+              Oops!
+            </Header>
             <p>Sorry, an unexpected error has occurred:</p>
             <p>
               <i>{error.statusText || error.message}</i>
@@ -28,7 +38,7 @@ export default function ErrorPage() {
               loop
               controls
               autoplay
-            ></Player>
+            />
           </div>
         </div>
       </div>
