@@ -1,10 +1,11 @@
 import "../index.css";
 import animationData from "./animation.json";
+import { Container } from "semantic-ui-react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function Loading() {
   return (
-    <>
+    <Container className="container-styles">
       <h1>Loading...</h1>
       <Player
         src={animationData}
@@ -21,6 +22,6 @@ export default function Loading() {
         controls
         autoplay
       ></Player>
-    </>
+    </Container>
   );
 }
