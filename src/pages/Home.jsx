@@ -42,7 +42,7 @@ export default function Home() {
               await you. Cheers to a world of endless possibilities!
             </p>
           </Grid.Column>
-          <Grid.Column width={6} padded>
+          <Grid.Column width={7} padded>
             <ImageCarousel />
           </Grid.Column>
         </Grid.Row>
