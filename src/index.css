@@ -128,8 +128,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  position: relative;
-  overflow: hidden;
   max-width: 100%;
   margin-top: 1rem;
   padding: 0.5rem;
@@ -138,17 +136,46 @@ body {
     0px 4px 8px rgba(0, 0, 0, 0.1), 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 1;
+    background-color: #3a0ca3;
+  }
+
+  .container-styles {
+    z-index: 0;
+  }
+
+  .sidebar:hover {
+    background-color: var(--main-turquoise);
+  }
+
+  .nav-item {
+    color: var(--main-turquoise);
+  }
+
+  .nav-item:hover {
+    outline: 1px solid var(--main-pink);
+    border-radius: 1.5rem;
+  }
+
+  #detail {
+    padding-top: 7rem;
+  }
+}
+
 .nav-item {
   padding: 1rem;
   text-decoration: none;
-  z-index: 1;
-  position: relative;
+  border-radius: 1.5rem;
 }
 
 .nav-item:hover {
   color: var(--main-pink);
   outline: 1px solid var(--main-pink);
-  border-radius: 1.5rem;
 }
 
 .padding-table {
