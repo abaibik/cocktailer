@@ -9,6 +9,7 @@ export const itemsApi = createApi({
       query: () => "/",
       providesTags: ["Items"],
     }),
+
     addListItem: builder.mutation({
       query: (payload) => ({
         url: "/",
@@ -20,6 +21,7 @@ export const itemsApi = createApi({
       }),
       invalidatesTags: ["Items"],
     }),
+
     changeDoneStatus: builder.mutation({
       query: ({ id, done }) => ({
         url: `/${id}`,
@@ -31,6 +33,7 @@ export const itemsApi = createApi({
       }),
       invalidatesTags: ["Items"],
     }),
+
     deleteItem: builder.mutation({
       query: ({ id }) => ({
         url: `/${id}`,
@@ -38,6 +41,7 @@ export const itemsApi = createApi({
       }),
       invalidatesTags: ["Items"],
     }),
+
     uploadPhoto: builder.mutation({
       queryFn: async ({ file }) => {
         const formData = new FormData();
