@@ -48,9 +48,8 @@ export default function ImageCarousel() {
       }}
     >
       {SliderImages.map(({ title, src }) => (
-        <SwiperSlide>
+        <SwiperSlide key={title}>
           <img
-            key={title}
             alt={title}
             src={src}
             style={{ height: "100%", aspectRatio: 1, objectFit: "cover" }}
