@@ -28,7 +28,7 @@ export default function AddGlass() {
       <Form onSubmit={handleSubmit} className="ui form padding-table">
         <div className="ui one column grid">
           <div className="row">
-            <div className="column">
+            <div className="column" style={{ width: "35vw" }}>
               <div className="field">
                 <label className="label-search-field">
                   A new glass called...
@@ -41,7 +41,7 @@ export default function AddGlass() {
               </div>
             </div>
 
-            <div className="column">
+            <div className="column" style={{ width: "35vw" }}>
               <div className="field">
                 <label className="label-search-field">How it looks like?</label>
                 <Input
@@ -52,7 +52,7 @@ export default function AddGlass() {
               </div>
             </div>
 
-            <div className="column">
+            <div className="column" style={{ width: "35vw" }}>
               <div className="field">
                 <label className="label-search-field">Add a photo</label>
                 <Input
@@ -65,10 +65,20 @@ export default function AddGlass() {
           </div>
         </div>
 
+        <div className="ui hidden divider"></div>
+
         <div className="three column row">
           <div className="column centered-text">
-            <button className="ui button" type="submit" disabled={isLoading}>
-              Add the glass to database
+            <button
+              className="ui animated button"
+              tabIndex="0"
+              type="submit"
+              disabled={isLoading}
+            >
+              <div className="visible content">Add the glass to database</div>
+              <div className="hidden content">
+                <i className="right arrow icon"></i>
+              </div>
             </button>
           </div>
         </div>
