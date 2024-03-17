@@ -7,8 +7,8 @@ export default function Home() {
     <Container className="container-styles">
       <Header as="h1">Coctailer</Header>
       <Grid stackable>
-        <Grid.Row columns={2}>
-          <Grid.Column width={8} textAlign="left" padded>
+        <Grid.Row columns={3}>
+          <Grid.Column width={9} textAlign="right">
             <p>Welcome to the site with cocktail recipes.</p>
 
             <p>
@@ -42,7 +42,10 @@ export default function Home() {
               await you. Cheers to a world of endless possibilities!
             </p>
           </Grid.Column>
-          <Grid.Column className="column-padding" width={7} padded>
+
+          <Grid.Column className="column-padding" width={2}></Grid.Column>
+
+          <Grid.Column className="column-padding" width={4}>
             <ImageCarousel />
           </Grid.Column>
         </Grid.Row>
