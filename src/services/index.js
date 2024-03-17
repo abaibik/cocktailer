@@ -1,51 +1,18 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const itemsApi = createApi({
-  reducerPath: "itemsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/api/items" }),
-  tagTypes: ["Items"],
+  reducerPath: "cocktailsApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://coctails-api.vercel.app/coctails/",
+  }),
+  tagTypes: ["Cocktails"],
   endpoints: (builder) => ({
     getAllItems: builder.query({
       query: () => "/",
-      providesTags: ["Items"],
-    }),
-    addListItem: builder.mutation({
-      query: (payload) => ({
-        url: "/",
-        method: "POST",
-        body: payload,
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }),
-      invalidatesTags: ["Items"],
-    }),
-    changeDoneStatus: builder.mutation({
-      query: ({ id, done }) => ({
-        url: `/${id}`,
-        method: "PATCH",
-        body: { done },
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }),
-      invalidatesTags: ["Items"],
-    }),
-    deleteItem: builder.mutation({
-      query: ({ id }) => ({
-        url: `/${id}`,
-        method: "DELETE",
-      }),
-      invalidatesTags: ["Items"],
+      providesTags: ["Cocktails"],
     }),
   }),
 });
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const {
-  useGetAllItemsQuery,
-  useAddListItemMutation,
-  useChangeDoneStatusMutation,
-  useDeleteItemMutation,
-} = itemsApi;
+export const { useGetAllItemsQuery } = itemsApi;
+export const { endpoints, reducerPath, reducer, middleware } = itemsApi;

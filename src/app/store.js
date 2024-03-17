@@ -1,24 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { reducerPath, reducer, middleware } from "../services/index.js";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { [reducerPath]: reducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleware),
 });
-
-// async function clickHandler() {
-//   const url = "https://the-cocktail-db.p.rapidapi.com/search.php?s=vodka";
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       "X-RapidAPI-Key": "SIGN-UP-FOR-KEY",
-//       "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
-//     },
-//   };
-
-//   try {
-//     const response = await fetch(url, options);
-//     const result = await response.text();
-//     console.log(result);
-//   } catch (error) {
-//     setError(true);
-//   }
-// }
