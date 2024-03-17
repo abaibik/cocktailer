@@ -6,6 +6,7 @@ export default function Root() {
   const { pathname } = useLocation();
   const homePath = "/";
   const searchCocktailPath = "/cocktails";
+  const addGlassPath = "/addGlass";
 
   return (
     <>
@@ -25,6 +26,13 @@ export default function Root() {
               to={searchCocktailPath}
             >
               Search cocktail
+            </Link>
+            <Link
+              className="active item nav-item"
+              active={pathname === addGlassPath}
+              to={addGlassPath}
+            >
+              Add glass
             </Link>
           </nav>
 
